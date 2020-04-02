@@ -1,9 +1,4 @@
 
-.content {
-    grid-area: content;
-    background: brown;
-}
-
 .content img {
     width: 100%;
     height: auto;

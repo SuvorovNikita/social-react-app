@@ -4,7 +4,7 @@ import MyPosts from "./MyPosts/MyPosts";
 
 const Profile = () => {
     return (
-        <div className={classes.content}>
+        <div>
             <div><img src="https://images.wallpaperscraft.com/image/tree_horizon_minimalism_128903_1280x720.jpg" alt=""/></div>
             <div>
                 ava + description
