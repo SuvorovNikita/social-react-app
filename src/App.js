@@ -3,6 +3,7 @@ import './App.css';
 import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
 import Profile from "./components/Profile/Profile";
+import Dialogs from "./components/Dialogs/Dialogs";
 
 
 const App = () => {
@@ -10,10 +11,11 @@ const App = () => {
         <div className='app-wrapper'>
             <Header/>
             <NavBar/>
-            <Profile/>
+            {/*<Profile/>*/}
+            <Dialogs/>
         </div>
     );
-}
+};
 
 
 export default App;

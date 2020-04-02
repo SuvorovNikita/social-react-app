@@ -1,14 +1,13 @@
 import React from "react";
 import classes from './Posts.module.css';
 
-const Posts = () => {
+const Posts = (props) => {
     return (
         <div>
-            <div className={classes.item}><img src="https://static.zerochan.net/Uchiha.Obito.full.2432796.jpg" alt=""/>post 1</div>
+            <div className={classes.item}><img src="https://static.zerochan.net/Uchiha.Obito.full.2432796.jpg" alt=""/>{props.message}</div>
             <div>
-                <span>like</span>
+                <span>like {props.like}</span>
             </div>
-
         </div>
     );
 }
