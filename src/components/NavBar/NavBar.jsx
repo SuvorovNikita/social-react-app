@@ -4,11 +4,11 @@ import classes from './NavBar.module.css'
 const NavBar = () => {
     return (
         <nav className={classes.nav}>
-            <div className={`${classes.item} ${classes.active}`}><a href="..#">Profile</a></div>
-            <div className={classes.item}><a href="..#">Messages</a></div>
-            <div className={classes.item}><a href="..#">News</a></div>
-            <div className={classes.item}><a href="..#">Music</a></div>
-            <div className={classes.item}><a href="..#">Settings</a></div>
+            <div className={`${classes.item} ${classes.active}`}><a href="/Profile">Profile</a></div>
+            <div className={classes.item}><a href="/Dialogs">Messages</a></div>
+            <div className={classes.item}><a href="/New">News</a></div>
+            <div className={classes.item}><a href="/Music">Music</a></div>
+            <div className={classes.item}><a href="/Settings">Settings</a></div>
         </nav>
     );
 }
