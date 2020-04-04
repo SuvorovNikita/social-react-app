@@ -7,18 +7,16 @@
 .dialogsItem {
     padding: 20px;
 }
+
 .dialogsItem .active {
     color: gold;
 }
 
-.dialog {
-
-}
 
 .messages {
     padding: 20px;
 }
 
 .message {
-
+    color: white;
 }
