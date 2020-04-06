@@ -6,7 +6,7 @@ const Posts = (props) => {
         <div>
             <div className={classes.item}><img src="https://static.zerochan.net/Uchiha.Obito.full.2432796.jpg" alt=""/>{props.message}</div>
             <div>
-                <span>like {props.like}</span>
+                <span>like</span> {props.like}
             </div>
         </div>
     );

@@ -16,7 +16,7 @@ const MyPosts = () => {
         <div className={classes.postsBlock}>
             <h3>My posts</h3>
             <div>
-                <textarea></textarea>
+                <textarea>jfgj</textarea>
             </div>
             <div>
                 <button>add post</button>
@@ -26,5 +26,5 @@ const MyPosts = () => {
             </div>
         </div>
     );
-}
+};
 export default MyPosts;
