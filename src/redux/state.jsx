@@ -1,3 +1,9 @@
+const ADD_POST = "ADD-POST";
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
+const SEND_MESSAGE = 'SEND_MESSAGE';
+
 let store = {
 
     _state: {
@@ -21,6 +27,7 @@ let store = {
                 {id: 2, message: "kak dela?"},
                 {id: 3, message: "good"},
             ],
+            newMessageBody: ''
         }
     },
     _callSubs() {
@@ -29,13 +36,14 @@ let store = {
     getState() {
         return this._state;
     },
+
+
     subscribe(observer) {
         this._state._callSubs = observer;
     },
 
-
     dispatch(action) {
-        if (action.type === "ADD-POST") {
+        if (action.type === ADD_POST) {
             let newPost = {
                 id: 5,
                 message: this._state.profilePage.newPostText,
@@ -44,10 +52,46 @@ let store = {
             this._state.profilePage.postData.push(newPost);
             this._state.profilePage.newPostText = '';
             this._callSubs(this._state);
-        } else if (action.type === "UPDATE-NEW-POST-TEXT") {
+        }
+        else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profilePage.newPostText = action.newText;
             this._state._callSubs();
         }
+        else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._state.messagesPage.newMessageBody = action.body;
+            this._callSubs(this._state);
+        }
+        else if (action.type === SEND_MESSAGE) {
+            let body = this._state.messagesPage.newMessageBody;
+            this._state.messagesPage.newMessageBody = '';
+            this._state.messagesPage.messagesData.push({id: 4, message: body});
+            this._callSubs(this._state);
+        }
+    }
+};
+
+
+export const addPostActionCreator = () => {
+    return {
+        type: ADD_POST
+    }
+};
+
+export const updateNewPostTextActionCreator = (text) => {
+    return {
+        type: UPDATE_NEW_POST_TEXT, newText: text
+    }
+};
+
+
+export const sendMessageCreator = () => {
+    return {
+        type: SEND_MESSAGE
+    }
+};
+export const updateNewMessageBodyCreator = (body) => {
+    return {
+        type: UPDATE_NEW_MESSAGE_BODY, body: body
     }
 };
 
