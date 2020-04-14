@@ -9,8 +9,6 @@ import ReactDOM from 'react-dom'
 let rerenderEntireTree = () => {
     ReactDOM.render(<App dispatch={store.dispatch.bind(store)} store={store}
                          state={store.getState()}/>, document.getElementById('root'));
-
-
 };
 
 rerenderEntireTree(store.getState());
